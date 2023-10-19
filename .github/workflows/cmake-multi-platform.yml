@@ -24,15 +24,10 @@ jobs:
       # To add more build types (Release, Debug, RelWithDebInfo, etc.) customize the build_type list.
       matrix:
         os: [windows-latest]
-        build_type: [Debug, Release]
+        build_type: [Debug]
         cpp_compiler: [g++]
         generator: [MinGW Makefiles]
         include:
-          - os: windows-latest
-            build_type: Debug
-            cpp_compiler: g++
-            generator: MinGW Makefiles
-        exclude:
           - os: windows-latest
             build_type: Debug
             cpp_compiler: g++
