@@ -26,15 +26,15 @@ jobs:
         os: [windows-latest]
         build_type: [Debug]
         cpp_compiler: [g++]
-        generator: ["MinGW Makefiles"]
+        generator: [MinGW Makefiles]
         include:
           - os: windows-latest
             cpp_compiler: g++
-            generator: "MinGW Makefiles"
+            generator: MinGW Makefiles
         exclude:
           - os: windows-latest
             cpp_compiler: g++
-            generator: "MinGW Makefiles"
+            generator: MinGW Makefiles
 
     steps:
     - uses: actions/checkout@v3
@@ -53,7 +53,7 @@ jobs:
         cmake -B ${{ steps.strings.outputs.build-output-dir }}
         -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-        -G ${{ matrix.generator }}
+        -G "${{ matrix.generator }}"
         -S ${{ github.workspace }}
 
     - name: Build
