@@ -29,10 +29,12 @@ jobs:
         generator: [MinGW Makefiles]
         include:
           - os: windows-latest
+            build_type: Debug
             cpp_compiler: g++
             generator: MinGW Makefiles
         exclude:
           - os: windows-latest
+            build_type: Debug
             cpp_compiler: g++
             generator: MinGW Makefiles
 
